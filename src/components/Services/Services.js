@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components'
 import {Col, Container, Row} from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import service1 from '../../images/service1.png'
-import service2 from '../../images/service2.png'
-import service3 from '../../images/service3.png'
-import service4 from '../../images/service4.png'
+import service1 from '../../images/service1.jpeg'
+import service2 from '../../images/service2.jpeg'
+import service3 from '../../images/service3.jpeg'
+import service4 from '../../images/service4.jpeg'
 import {AiOutlineArrowRight} from "react-icons/all";
 
 const Wrapper = styled.div`

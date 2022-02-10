@@ -12,7 +12,8 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^2.0.2",
@@ -26,5 +27,8 @@
     "react-redux": "^7.2.6",
     "redux": "^4.1.2",
     "styled-components": "^5.3.3"
+  },
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
   }
 }

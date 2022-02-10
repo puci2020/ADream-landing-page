@@ -19,12 +19,12 @@ const Wrapper = styled.div`
 
   .slide {
     opacity: 0;
-    transition: 2s ease;
+    
   }
 
   .slide.active {
     opacity: 1;
-    transition-duration: 2s;
+    transition: 2s ease-in-out;
     width: 100%;
     height: 100%;
 
@@ -217,7 +217,7 @@ const Home = () => {
 
   const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
-    setProgress(0);
+    // setProgress(0);
   }
 
   const prevSlide = () => {
@@ -230,7 +230,7 @@ const Home = () => {
       //setProgress(Math.floor(Math.random() * 100) + 1);
 
       // setInterval(() => setProgress(progress < 100 ? progress + 1 : 0), 100);
-    }, 10000);
+    }, 8000);
 
   }, [current]);
 
