@@ -15,6 +15,11 @@ const Wrapper = styled.div`
 
   .row {
     margin-bottom: 106px;
+    display: flex;
+    justify-content: center;
+    h1{
+      font-size: 65px;
+    }
     //grid-gap: 106px;
   }
 
@@ -23,9 +28,11 @@ const Wrapper = styled.div`
   }
 
   .custom{
+    display: flex;
+    justify-content: center;
     
     @media(max-width: 768px){
-      display: flex;
+      
       justify-content: center;
     }
   }
@@ -41,6 +48,10 @@ const Wrapper = styled.div`
 
     .row {
       margin-bottom: 0;
+      
+      h1{
+        font-size: 42px;
+      }
     }
   }
 `;
@@ -102,7 +113,7 @@ const News = () => (
 
   <Wrapper>
     <Container fluid="sm" style={{margin: 0, padding: 0, maxWidth: '100%'}}>
-      <Row style={{textAlign: 'center'}}><h1 style={{fontSize: 65, fontWeight: 'bold'}}>Aktualności</h1></Row>
+      <Row style={{textAlign: 'center'}}><h1 style={{fontWeight: 'bold', width: 'fit-content'}}>Aktualności</h1></Row>
       <Row>
 
 
