@@ -162,7 +162,7 @@ const Info = styled.div`
   }
 `;
 
-const PhotoItem = ({ image, thumb, group }) => (
+const PhotoItem = ({ image, thumb, group='a' }) => (
     <LightgalleryItem group={group} src={image} thumb={thumb}>
       <img src={image} style={{ width: "100%" }} />
     </LightgalleryItem>

@@ -70,17 +70,17 @@ const CountWrapper = styled.div`
     &::before {
       content: '';
       width: ${(props) => `${props.progress}%`};
-      transition: all 8s ease;
+      transition: width .1s ease;
 
       height: 100%;
       background-color: white;
       display: block;
-      
-      
-      
+
+
     }
- 
+
   }
+
   @media (max-width: 820px) {
     height: 50px;
     width: 25%;
@@ -215,18 +215,26 @@ const Title = styled.div`
 
 const Home = () => {
   const [current, setCurrent] = useState(0);
-  const [progress, setProgress] = useState(80)
+  const [progress, setProgress] = useState(0)
   const length = SliderData.length;
+  let interval = undefined;
 
   const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
+    setProgress(0);
+    clearInterval(interval);
   }
 
   const prevSlide = () => {
     setCurrent(current === 0 ? length - 1 : current - 1);
+    setProgress(0);
+    clearInterval(interval);
   }
 
   useEffect(() => {
+    interval = setInterval(() => {
+      setProgress((old) => old < 100 ? old + 1 : 0);
+    }, 80);
 
     setTimeout(() => {
       nextSlide();
@@ -234,6 +242,28 @@ const Home = () => {
 
   }, [current]);
 
+  // useEffect(() => {
+  //   console.log(progress)
+  //   if(progress === 100){
+  //     clearInterval(interval);
+  //     setProgress(0);
+  //   }
+  //
+  // }, [progress])
+
+
+  // useEffect(() => {
+  //
+  //   const interval = setInterval(() => {
+  //     setProgress((old) => old < 100 ? old + 1 : 0);
+  //   }, 80);
+  //
+  //
+  //
+  //
+  // clearInterval(interval)
+  //
+  // }, []);
 
   return (
     // <Hero>
