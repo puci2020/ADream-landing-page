@@ -234,8 +234,8 @@ const Home = () => {
   useEffect(() => {
     if(progress === 100){
       nextSlide();
-      setProgress(0);
-      clearInterval(interval);
+      // setProgress(0);
+      // clearInterval(interval);
     }
   }, [progress]);
 
