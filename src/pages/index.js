@@ -6,6 +6,7 @@ import Header from "../components/Header/Header";
 import Sidebar from "../components/Sidebar/Sidebar";
 import Services from "../components/Services/Services";
 import Features from "../components/Features/Features";
+import News from "../components/News/News";
 
 import { LightgalleryProvider } from "react-lightgallery";
 import "lightgallery.js/dist/css/lightgallery.css";
@@ -39,6 +40,7 @@ const IndexPage = () => {
           {/*</Hero> */}
           <Services/>
           <Features/>
+          <News/>
         </Main>
 
       </Provider>

@@ -8,6 +8,9 @@ import icon4 from './images/icon4.svg';
 import icon5 from './images/icon5.svg';
 import icon6 from './images/icon6.svg';
 import icon7 from './images/icon7.svg';
+import news1 from './images/news1.jpeg';
+import news2 from './images/news2.jpeg';
+import news3 from './images/news3.jpeg';
 
 export const SliderData = [
   {
@@ -54,6 +57,18 @@ export const IconsData = [
 
 export const NewsData = [
   {
-
+    image: news1,
+    date: '01.01.2021',
+    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+  },
+  {
+    image: news2,
+    date: '01.01.2021',
+    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+  },
+  {
+    image: news3,
+    date: '01.01.2021',
+    title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
   }
 ]
