@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import styled from 'styled-components'
-import {SliderData} from "../../SliderData";
+import {SliderData} from "../../ConstData";
 import "./../../styles.css"
 import firma from './../../images/Firma.svg'
 import Form from "../Form/Form";
@@ -19,7 +19,7 @@ const Wrapper = styled.div`
 
   .slide {
     opacity: 0;
-    
+
   }
 
   .slide.active {
@@ -66,18 +66,21 @@ const CountWrapper = styled.div`
     width: 60%;
     height: 5px;
     background-color: black;
-    transition: 8s ease;
-    transition-delay: 8s;
 
     &::before {
       content: '';
       width: ${(props) => `${props.progress}%`};
+      transition: all 8s ease;
+
       height: 100%;
       background-color: white;
       display: block;
+      
+      
+      
     }
+ 
   }
-
   @media (max-width: 820px) {
     height: 50px;
     width: 25%;
@@ -167,11 +170,11 @@ const InsideWrapper = styled.div`
   display: flex;
   align-items: end;
   justify-content: space-between;
-  padding: 30px 175px;
+  padding: 40px 175px;
   gap: 30px;
 
   @media (max-width: 1000px) {
-    padding: 0 120px;
+    padding: 30px 120px;
     //margin-top: 20px;
   }
   @media (max-width: 820px) {
@@ -212,12 +215,11 @@ const Title = styled.div`
 
 const Home = () => {
   const [current, setCurrent] = useState(0);
-  const [progress, setProgress] = useState(0)
+  const [progress, setProgress] = useState(80)
   const length = SliderData.length;
 
   const nextSlide = () => {
     setCurrent(current === length - 1 ? 0 : current + 1);
-    // setProgress(0);
   }
 
   const prevSlide = () => {
@@ -225,30 +227,12 @@ const Home = () => {
   }
 
   useEffect(() => {
+
     setTimeout(() => {
       nextSlide();
-      //setProgress(Math.floor(Math.random() * 100) + 1);
-
-      // setInterval(() => setProgress(progress < 100 ? progress + 1 : 0), 100);
     }, 8000);
 
   }, [current]);
-
-  // useEffect(() => {
-  // //
-  // //   // setInterval(() => {
-  // //   //   if (progress%100 === 0) {
-  // //   //     setProgress(0)
-  // //   //   }
-  // //   //   setProgress(progress + 1);
-  // //   // }, 8000)
-  // setInterval(() => {
-  //   setProgress(progress + 10 );
-  // }, 1000)
-  //
-  //   console.log(progress)
-  // }, []);
-
 
 
   return (

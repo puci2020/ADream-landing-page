@@ -164,7 +164,7 @@ const Info = styled.div`
 const Services = () => (
 
   <Wrapper>
-    <Container fluid="sm" style={{margin: 0, padding: 0}}>
+    <Container fluid="sm" style={{margin: 0, padding: 0, maxWidth: '100%'}}>
 
       <Row>
         <Col sm={12} md={6}>
