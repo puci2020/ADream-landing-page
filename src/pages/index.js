@@ -7,8 +7,11 @@ import Sidebar from "../components/Sidebar/Sidebar";
 import Services from "../components/Services/Services";
 import Features from "../components/Features/Features";
 
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
+import { LightgalleryProvider } from "react-lightgallery";
+import "lightgallery.js/dist/css/lightgallery.css";
+
+import {createStore} from 'redux';
+import {Provider} from 'react-redux';
 import allReducers from './../state/reducers/store'
 
 const Main = styled.div`
@@ -20,22 +23,26 @@ const IndexPage = () => {
   const store = createStore(allReducers);
 
   return (
-    <Provider store={store}>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>Pixel Perfect</title>
-      </Helmet>
-    <Main>
-      {/*<Hero>*/}
-      <Sidebar/>
-        <Home/>
+    <LightgalleryProvider>
+      <Provider store={store}>
 
-      <Header/>
-      {/*</Hero> */}
-      <Services/>
-      <Features/>
-    </Main>
-    </Provider>
+        <Helmet>
+          <meta charSet="utf-8"/>
+          <title>Pixel Perfect</title>
+        </Helmet>
+        <Main>
+          {/*<Hero>*/}
+          <Sidebar/>
+          <Home/>
+
+          <Header/>
+          {/*</Hero> */}
+          <Services/>
+          <Features/>
+        </Main>
+
+      </Provider>
+    </LightgalleryProvider>
   )
 }
 

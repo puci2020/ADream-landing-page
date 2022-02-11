@@ -15,13 +15,21 @@ const Wrapper = styled.div`
 
   .row {
     margin-bottom: 28px;
+
+    
   }
 
   //.col-md-3, .col-sm-12 {
   .custom {
     padding: 0;
     margin-bottom: 120px;
+    
+    &:nth-child(4n) > div{
+      padding-right: 0;
+    }
+
   }
+
 
   @media (max-width: 1000px) {
     padding: 0 120px 100px 120px;
@@ -44,9 +52,10 @@ const Card = styled.div`
   display: flex;
   flex-direction: column;
   align-items: start;
-  padding: 0 50px;
+  padding-right: 100px;
 
-  .icon{
+
+  .icon {
     width: 100%;
     height: 70%;
     display: flex;
@@ -54,22 +63,17 @@ const Card = styled.div`
     justify-content: start;
     margin-bottom: 44px;
   }
-  
-  .text{
+
+  .text {
     width: 100%;
     height: 30%;
   }
-  
-  //img{
-  //  margin-bottom: 44px;
-  //}
-  
-  span{
+
+  span {
     font-size: 28px;
-    
   }
-  
-  h1{
+
+  h1 {
     font-size: 48px;
     font-weight: bold;
   }
@@ -98,12 +102,13 @@ const Button = styled.button`
   align-items: center;
   justify-content: space-between;
   padding: 0 !important;
-  
-  span{
+
+  span {
     margin-left: 20px;
     width: 80%;
   }
-  .arrow{
+
+  .arrow {
     width: 20%;
     height: 100%;
     display: flex;
@@ -111,17 +116,19 @@ const Button = styled.button`
     justify-content: center;
     background-color: black !important;
   }
-  svg{
+
+  svg {
     margin: 0 20px;
     color: white;
     height: 60%;
     width: auto;
   }
-  &:hover{
+
+  &:hover {
     background-position: left bottom;
     color: black;
     cursor: pointer;
-    
+
   }
 `;
 
@@ -132,12 +139,12 @@ const Features = () => (
       <Row>
         <Col className="custom" sm={12} md={3}>
           <Card>
-           <h1>Lorem <br/>
-            ipsum<br/>
-             dolor sit<br/>
-             amet,<br/>
-             conse
-           </h1>
+            <h1>Lorem <br/>
+              ipsum<br/>
+              dolor sit<br/>
+              amet,<br/>
+              conse
+            </h1>
             <Bar/>
           </Card>
         </Col>
@@ -145,17 +152,19 @@ const Features = () => (
           <Col className="custom" sm={12} md={3} key={index}>
             <Card>
               <div className="icon">
-              <img src={icon.icon} alt={index}/>
+                <img src={icon.icon} alt={index}/>
               </div>
               <div className="text">
-              <span>{icon.text}</span>
+                <span>{icon.text}</span>
               </div>
             </Card>
           </Col>
         ))}
       </Row>
       <Row style={{paddingTop: 40}}>
-        <Button style={{width: 380}}><span>DOWIEDZ SIĘ WIĘCEJ</span> <div className="arrow"><AiOutlineArrowRight/></div></Button>
+        <Button style={{width: 380}}><span>DOWIEDZ SIĘ WIĘCEJ</span>
+          <div className="arrow"><AiOutlineArrowRight/></div>
+        </Button>
       </Row>
     </Container>
   </Wrapper>

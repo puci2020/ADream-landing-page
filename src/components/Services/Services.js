@@ -8,6 +8,8 @@ import service3 from '../../images/service3.jpeg'
 import service4 from '../../images/service4.jpeg'
 import {AiOutlineArrowRight} from "react-icons/all";
 
+import { LightgalleryItem } from "react-lightgallery";
+
 const Wrapper = styled.div`
   width: 100vw;
   //min-height: 100vh;
@@ -160,6 +162,12 @@ const Info = styled.div`
   }
 `;
 
+const PhotoItem = ({ image, thumb, group }) => (
+    <LightgalleryItem group={group} src={image} thumb={thumb}>
+      <img src={image} style={{ width: "100%" }} />
+    </LightgalleryItem>
+);
+
 
 const Services = () => (
 
@@ -175,7 +183,7 @@ const Services = () => (
               <div className="line"/>
               <span>od 1000zł/msc</span>
             </Info>
-            <img src={service1}/>
+            <PhotoItem image={service1}/>
             <div className="arrow"><AiOutlineArrowRight/></div>
           </Card>
         </Col>
@@ -187,7 +195,7 @@ const Services = () => (
               <div className="line"/>
               <span>od 500zł/msc</span>
             </Info>
-            <img src={service2}/>
+            <PhotoItem image={service2}/>
             <div className="arrow"><AiOutlineArrowRight/></div>
           </Card>
         </Col>
@@ -201,7 +209,7 @@ const Services = () => (
               <div className="line"/>
               <span>od 100zł/h</span>
             </Info>
-            <img src={service3}/>
+            <PhotoItem image={service3}/>
             <div className="arrow"><AiOutlineArrowRight/></div>
           </Card>
         </Col>
@@ -213,7 +221,7 @@ const Services = () => (
               <div className="line"/>
               <span>od 100zł/h</span>
             </Info>
-            <img src={service4}/>
+            <PhotoItem image={service4}/>
             <div className="arrow"><AiOutlineArrowRight/></div>
           </Card>
         </Col>

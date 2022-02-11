@@ -50,4 +50,10 @@ export const IconsData = [
     icon: icon7,
     text: 'Lorem ipsum dolor \n sit amet \n lorem ipsum'
   }
+];
+
+export const NewsData = [
+  {
+
+  }
 ]
