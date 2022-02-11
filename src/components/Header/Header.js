@@ -10,29 +10,20 @@ const Wrapper = styled.nav`
   height: 67px;
   width: 100vw;
   position: absolute;
-  //top: 4.46%;
   top: 0;
   background-color: transparent;
-  //padding: 4.46% 9.11% 0 9.11%;
-  //padding: 0 175px;
   margin-top: 42px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   color: white;
 
-  @media (max-width: 1300px) {
-    //margin-top: 0;
-  }
-
   @media (max-width: 1000px) {
-    //padding: 0 120px;
     margin-top: 20px;
   }
   @media (max-width: 820px) {
     padding: 0 20px;
   }
-
 `;
 
 const Logo = styled.div`
@@ -42,8 +33,6 @@ const Logo = styled.div`
   justify-content: center;
   align-items: center;
   font-weight: bold;
-  //font-size: 48px;
-    //background-image: url(${logo});
   margin-left: 175px;
 
   img {
@@ -58,7 +47,6 @@ const Logo = styled.div`
     width: 40px;
     margin-left: 10px;
   }
-
 `;
 
 const Links = styled.div`
@@ -86,7 +74,6 @@ const Links = styled.div`
       margin-top: 10px;
       transition: width 0.3s ease-in-out;
       position: relative;
-
     }
 
     &:hover {
@@ -98,6 +85,7 @@ const Links = styled.div`
         transform: translate(-50%, 0);
       }
     }
+    
     @media(max-width: 1150px){
       display: none;
     }
@@ -142,15 +130,12 @@ const Social = styled.div`
     @media(min-width: 1150px){
       display: none;
     }
-    
   }
 
   @media (max-width: 1000px) {
-    //width: 70px;
     margin-right: 120px;
   }
   @media (max-width: 820px) {
-    //width: 40px;
     margin-right: 10px;
   }
 `;
@@ -199,8 +184,6 @@ const Header = () => {
 
         </div>
       </Social>
-
-
     </Wrapper>
   )
 }

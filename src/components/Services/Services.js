@@ -78,7 +78,6 @@ const Card = styled.div`
       width: 40%;
       height: 40%;
     }
-
   }
 
   &:hover {
@@ -92,7 +91,6 @@ const Card = styled.div`
       cursor: pointer;
     }
   }
-
 `;
 
 
@@ -173,7 +171,6 @@ const Services = () => (
 
   <Wrapper>
     <Container fluid="sm" style={{margin: 0, padding: 0, maxWidth: '100%'}}>
-
       <Row>
         <Col sm={12} md={6}>
           <Card>
@@ -226,7 +223,6 @@ const Services = () => (
           </Card>
         </Col>
       </Row>
-
     </Container>
   </Wrapper>
 

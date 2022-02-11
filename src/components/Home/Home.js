@@ -15,11 +15,9 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
-
+  
   .slide {
     opacity: 0;
-
   }
 
   .slide.active {
@@ -45,9 +43,7 @@ const Img = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
-
 `;
-
 
 const CountWrapper = styled.div`
   width: 15%;
@@ -71,14 +67,10 @@ const CountWrapper = styled.div`
       content: '';
       width: ${(props) => `${props.progress}%`};
       transition: width .1s ease;
-
       height: 100%;
       background-color: white;
       display: block;
-
-
     }
-
   }
 
   @media (max-width: 820px) {
@@ -92,8 +84,6 @@ const ArrowWrapper = styled.div`
   max-height: 118px;
   width: 15.89%;
   height: 12.53%;
-  //width: 100%;
-  //height: 100%;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -135,7 +125,7 @@ const ArrowLeft = styled.div`
     background-position: right bottom;
     color: white;
   }
-`
+`;
 
 const ArrowRight = styled.div`
   width: 47.36%;
@@ -160,7 +150,7 @@ const ArrowRight = styled.div`
     background-position: left bottom;
     color: white;
   }
-`
+`;
 
 const InsideWrapper = styled.div`
   width: 100vw;
@@ -175,8 +165,8 @@ const InsideWrapper = styled.div`
 
   @media (max-width: 1000px) {
     padding: 30px 120px;
-    //margin-top: 20px;
   }
+  
   @media (max-width: 820px) {
     padding: 0 40px;
     flex-direction: column;
@@ -203,19 +193,18 @@ const Title = styled.div`
     font-size: 1.5rem;
   }
   @media (max-width: 820px) {
-
+    font-size: 1rem;
+    
     img {
       width: 50px;
     }
-
-    font-size: 1rem;
   }
 `;
 
 
 const Home = () => {
   const [current, setCurrent] = useState(0);
-  const [progress, setProgress] = useState(0)
+  const [progress, setProgress] = useState(0);
   const length = SliderData.length;
   let interval = undefined;
 
@@ -236,37 +225,22 @@ const Home = () => {
       setProgress((old) => old < 100 ? old + 1 : 0);
     }, 80);
 
-    setTimeout(() => {
+    // setTimeout(() => {
+    //   nextSlide();
+    // }, 8000);
+
+  }, []);
+
+  useEffect(() => {
+    if(progress === 100){
       nextSlide();
-    }, 8000);
+      setProgress(0);
+      clearInterval(interval);
+    }
+  }, [progress]);
 
-  }, [current]);
-
-  // useEffect(() => {
-  //   console.log(progress)
-  //   if(progress === 100){
-  //     clearInterval(interval);
-  //     setProgress(0);
-  //   }
-  //
-  // }, [progress])
-
-
-  // useEffect(() => {
-  //
-  //   const interval = setInterval(() => {
-  //     setProgress((old) => old < 100 ? old + 1 : 0);
-  //   }, 80);
-  //
-  //
-  //
-  //
-  // clearInterval(interval)
-  //
-  // }, []);
 
   return (
-    // <Hero>
     <Wrapper>
       {SliderData.map((image, index) => {
         return (
@@ -291,23 +265,18 @@ const Home = () => {
 
       <ArrowWrapper>
         <ArrowLeft onClick={prevSlide}>
-          {/*<img src={arrowLeft} alt="arrowLeft"/>*/}
           <AiOutlineArrowLeft/>
         </ArrowLeft>
         <ArrowRight onClick={nextSlide}>
-          {/*<img src={arrowRight} alt="arrowRight"/>*/}
           <AiOutlineArrowRight/>
         </ArrowRight>
-
       </ArrowWrapper>
 
       <CountWrapper progress={progress}>
         {current + 1 < 10 ? `0${current + 1}` : current + 1}
         <div className="bar"/>
         {length < 10 ? `0${length}` : length}</CountWrapper>
-
     </Wrapper>
-    // </Hero>
   )
 }
 
