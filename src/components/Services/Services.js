@@ -7,8 +7,7 @@ import service2 from '../../images/service2.jpeg'
 import service3 from '../../images/service3.jpeg'
 import service4 from '../../images/service4.jpeg'
 import {AiOutlineArrowRight} from "react-icons/all";
-
-import { LightgalleryItem } from "react-lightgallery";
+import PhotoItem from '../PhotoItem/PhotoItem';
 
 const Wrapper = styled.div`
   width: 100vw;
@@ -42,8 +41,10 @@ const Wrapper = styled.div`
 `;
 
 const Card = styled.div`
-  max-width: 770px;
-  max-height: ${(props) => (props.small ? '362px' : '495px')};
+  //max-width: 770px;
+  //max-width: 40vw;
+  //max-height: ${(props) => (props.small ? '362px' : '495px')};
+  //max-height: ${(props) => (props.small ? '19vw' : '25vw')};
   width: 100%;
   height: auto;
   overflow: hidden;
@@ -159,12 +160,6 @@ const Info = styled.div`
     padding: 15px 5px 5px 15px;
   }
 `;
-
-const PhotoItem = ({ image, thumb, group='a' }) => (
-    <LightgalleryItem group={group} src={image} thumb={thumb}>
-      <img src={image} style={{ width: "100%" }} />
-    </LightgalleryItem>
-);
 
 
 const Services = () => (

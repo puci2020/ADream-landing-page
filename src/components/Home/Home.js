@@ -184,7 +184,9 @@ const Title = styled.div`
   img {
     max-width: 176px;
   }
-
+  @media(min-width: 2000px){
+    font-size: 3rem;
+  }
   @media (max-width: 1000px) {
     img {
       width: 70px;

@@ -18,6 +18,9 @@ const Wrapper = styled.nav`
   justify-content: space-between;
   color: white;
 
+  @media(min-width: 2000px){
+    height: 150px;
+  }
   @media (max-width: 1000px) {
     margin-top: 20px;
   }
@@ -85,7 +88,9 @@ const Links = styled.div`
         transform: translate(-50%, 0);
       }
     }
-    
+    @media(min-width: 2000px){
+      font-size: 20px;
+    }
     @media(max-width: 1150px){
       display: none;
     }
@@ -115,6 +120,16 @@ const Social = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media(min-width: 2000px){
+      width: 50px;
+      height: 50px;
+      
+      svg{
+        width: 70%;
+        height: 70%;
+      }
+    }
   }
 
   .menu {

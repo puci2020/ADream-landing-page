@@ -3,8 +3,10 @@ import styled from 'styled-components'
 
 const Wrapper = styled.div`
   max-width: 449px;
+  //max-width: 40vw;
   width: auto;
-  max-height: 638px;
+  //max-height: 638px;
+  //max-height: 33vw;
   height: auto;
   background-color: white;
   padding: 30px;
@@ -17,6 +19,29 @@ const Wrapper = styled.div`
     margin-bottom: 10px;
   }
 
+  @media(min-width: 3000px){
+    //max-width: 30vw;
+    //max-height: 60vh;
+    padding: 60px;
+    
+    h3{
+      font-size: 60px;
+      margin-bottom: 20px;
+    }
+    h4{
+      font-size: 50px;
+      margin-bottom: 20px;
+    }
+    .paragraph{
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+    //transform: scale(2);
+    //margin-right: 175px;
+  }
+  @media(min-width: 3000px){
+    max-width: 30vw;
+  }
   @media (max-width: 1300px) {
     padding: 20px;
     .paragraph{
@@ -43,7 +68,12 @@ const Input = styled.input`
   border: 1px solid black;
   padding-left: 20px;
   margin-bottom: 10px;
-  
+
+  @media(min-width: 3000px){
+    height: 80px;
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
   @media(max-width: 376px){
     height: 20px;
   }
@@ -58,6 +88,15 @@ const Label = styled.label`
     width: 20px;
     height: 20px;
     
+  }
+
+  @media(min-width: 3000px){
+    font-size: 20px;
+    margin-bottom: 20px;
+    input[type="checkbox"]{
+      width: 40px;
+      height: 40px;
+    }
   }
 `;
 
@@ -79,7 +118,10 @@ const Button = styled.button`
     color: black;
     cursor: pointer;
   }
-
+  @media(min-width: 3000px){
+    height: 80px;
+    font-size: 20px;
+  }
   @media(max-width: 376px){
     height: 20px;
   }
