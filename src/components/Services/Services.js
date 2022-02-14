@@ -8,6 +8,7 @@ import service3 from '../../images/service3.jpeg'
 import service4 from '../../images/service4.jpeg'
 import {AiOutlineArrowRight} from "react-icons/all";
 import PhotoItem from '../PhotoItem/PhotoItem';
+import {ArrowBox} from '../GlobalComponents/GlobalComponents'
 
 const Wrapper = styled.div`
   width: 100vw;
@@ -41,15 +42,12 @@ const Wrapper = styled.div`
 `;
 
 const Card = styled.div`
-  //max-width: 770px;
-  //max-width: 40vw;
-  //max-height: ${(props) => (props.small ? '362px' : '495px')};
-  //max-height: ${(props) => (props.small ? '19vw' : '25vw')};
   width: 100%;
   height: auto;
   overflow: hidden;
   background-color: rgba(255, 255, 255, 25%);
   position: relative;
+  cursor: pointer;
 
   img {
     width: 100%;
@@ -60,25 +58,11 @@ const Card = styled.div`
   }
 
   .arrow {
-    max-width: 130px;
-    max-height: 130px;
-    width: 6.77vw;
-    height: 6.77vw;
+    //max-width: 130px;
+    //max-height: 130px;
     position: absolute;
     bottom: 0;
     right: 0;
-    background: linear-gradient(to right, black 50%, white 50%);
-    background-position: right bottom;
-    background-size: 201% 100%;
-    transition: all .5s ease-out;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    svg {
-      width: 40%;
-      height: 40%;
-    }
   }
 
   &:hover {
@@ -86,7 +70,7 @@ const Card = styled.div`
       transform: scale(110%);
     }
 
-    .arrow {
+    .arrow > div {
       background-position: left bottom;
       color: white;
       cursor: pointer;
@@ -176,7 +160,7 @@ const Services = () => (
               <span>od 1000zł/msc</span>
             </Info>
             <PhotoItem image={service1}/>
-            <div className="arrow"><AiOutlineArrowRight/></div>
+            <div className="arrow"><ArrowBox width='6.77vw' height='6.77vw' right><AiOutlineArrowRight/></ArrowBox></div>
           </Card>
         </Col>
         <Col sm={12} md={6}>
@@ -188,7 +172,7 @@ const Services = () => (
               <span>od 500zł/msc</span>
             </Info>
             <PhotoItem image={service2}/>
-            <div className="arrow"><AiOutlineArrowRight/></div>
+            <div className="arrow"><ArrowBox width='6.77vw' height='6.77vw' right><AiOutlineArrowRight/></ArrowBox></div>
           </Card>
         </Col>
       </Row>
@@ -202,7 +186,7 @@ const Services = () => (
               <span>od 100zł/h</span>
             </Info>
             <PhotoItem image={service3}/>
-            <div className="arrow"><AiOutlineArrowRight/></div>
+            <div className="arrow"><ArrowBox width='6.77vw' height='6.77vw' right><AiOutlineArrowRight/></ArrowBox></div>
           </Card>
         </Col>
         <Col sm={12} md={6}>
@@ -214,7 +198,7 @@ const Services = () => (
               <span>od 100zł/h</span>
             </Info>
             <PhotoItem image={service4}/>
-            <div className="arrow"><AiOutlineArrowRight/></div>
+            <div className="arrow"><ArrowBox width='6.77vw' height='6.77vw' right><AiOutlineArrowRight/></ArrowBox></div>
           </Card>
         </Col>
       </Row>

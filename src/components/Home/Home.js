@@ -6,6 +6,7 @@ import firma from './../../images/Firma.svg'
 import Form from "../Form/Form";
 import {AiOutlineArrowRight} from "react-icons/all";
 import {AiOutlineArrowLeft} from "react-icons/all";
+import {ArrowBox} from '../GlobalComponents/GlobalComponents'
 
 
 const Wrapper = styled.div`
@@ -102,56 +103,6 @@ const ArrowWrapper = styled.div`
   }
 `;
 
-const ArrowLeft = styled.div`
-  width: 52.64%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  outline: none;
-  background: linear-gradient(to left, black 50%, white 50%);
-  background-position: left bottom;
-  background-size: 200% 100%;
-  transition: all .3s ease-out;
-  color: black;
-
-  svg {
-    height: 40%;
-    width: auto;
-  }
-
-  &:hover {
-    background-position: right bottom;
-    color: white;
-  }
-`;
-
-const ArrowRight = styled.div`
-  width: 47.36%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  outline: none;
-  background: linear-gradient(to right, black 50%, white 50%);
-  background-position: right bottom;
-  background-size: 200% 100%;
-  transition: all .3s ease-out;
-  color: black;
-
-  svg {
-    height: 40%;
-    width: auto;
-  }
-
-  &:hover {
-    background-position: left bottom;
-    color: white;
-  }
-`;
-
 const InsideWrapper = styled.div`
   width: 100vw;
   height: 80%;
@@ -227,17 +178,11 @@ const Home = () => {
       setProgress((old) => old < 100 ? old + 1 : 0);
     }, 80);
 
-    // setTimeout(() => {
-    //   nextSlide();
-    // }, 8000);
-
   }, []);
 
   useEffect(() => {
     if(progress === 100){
       nextSlide();
-      // setProgress(0);
-      // clearInterval(interval);
     }
   }, [progress]);
 
@@ -266,12 +211,12 @@ const Home = () => {
       </InsideWrapper>
 
       <ArrowWrapper>
-        <ArrowLeft onClick={prevSlide}>
+        <ArrowBox onClick={prevSlide} width='52.64%' height='100%'>
           <AiOutlineArrowLeft/>
-        </ArrowLeft>
-        <ArrowRight onClick={nextSlide}>
+        </ArrowBox>
+        <ArrowBox onClick={nextSlide} width='47.36%' height='100%' right>
           <AiOutlineArrowRight/>
-        </ArrowRight>
+        </ArrowBox>
       </ArrowWrapper>
 
       <CountWrapper progress={progress}>
