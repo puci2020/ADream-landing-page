@@ -1,22 +1,24 @@
 import * as React from "react";
+import {Suspense} from 'react';
 import {Helmet} from 'react-helmet';
-import Home from './../components/Home/Home';
 import styled from "styled-components";
-import Header from "../components/Header/Header";
-import Sidebar from "../components/Sidebar/Sidebar";
-import Services from "../components/Services/Services";
-import Features from "../components/Features/Features";
-import News from "../components/News/News";
-import Team from "../components/Team/Team";
-import Footer from "../components/Footer/Footer";
-import Gallery from "../components/Gallery/Gallery";
-
+import Loader from "../components/Loader/Loader";
 import { LightgalleryProvider } from "react-lightgallery";
 import "lightgallery.js/dist/css/lightgallery.css";
-
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 import allReducers from './../state/reducers/store'
+
+const Home = React.lazy(() => import('./../components/Home/Home'));
+const Header = React.lazy(() => import("../components/Header/Header"));
+const Sidebar = React.lazy(() => import( "../components/Sidebar/Sidebar"));
+const Services = React.lazy(() => import("../components/Services/Services"));
+const Features = React.lazy(() => import( "../components/Features/Features"));
+const News = React.lazy(() => import( "../components/News/News"));
+const Team = React.lazy(() => import( "../components/Team/Team"));
+const Footer = React.lazy(() => import( "../components/Footer/Footer"));
+const Gallery = React.lazy(() => import( "../components/Gallery/Gallery"));
+
 
 const Main = styled.div`
 
@@ -27,6 +29,7 @@ const IndexPage = () => {
   const store = createStore(allReducers);
 
   return (
+    <Suspense fallback={<Loader />}>
     <LightgalleryProvider>
       <Provider store={store}>
 
@@ -51,6 +54,7 @@ const IndexPage = () => {
 
       </Provider>
     </LightgalleryProvider>
+    </Suspense>
   )
 }
 

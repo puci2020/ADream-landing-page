@@ -3,11 +3,11 @@ import styled from 'styled-components'
 import {SliderData} from "../../ConstData";
 import "./../../styles.css"
 import firma from './../../images/Firma.svg'
-import Form from "../Form/Form";
 import {AiOutlineArrowRight} from "react-icons/all";
 import {AiOutlineArrowLeft} from "react-icons/all";
 import {ArrowBox} from '../GlobalComponents/GlobalComponents'
 
+const Form = React.lazy(() => import('../Form/Form'));
 
 const Wrapper = styled.div`
   width: 100vw;
