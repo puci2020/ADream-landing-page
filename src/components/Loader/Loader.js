@@ -1,18 +1,6 @@
 import React from 'react';
-// import { makeStyles } from '@material-ui/core/styles';
 import styled from 'styled-components';
 
-// const useStyles = makeStyles((theme) => ({
-//   root: {
-//     display: 'flex',
-//     '& > * + *': {
-//       marginLeft: theme.spacing(2),
-//     },
-//     overflow: 'hidden',
-//   },
-// }));
-//
-// const
 
 const Wrapper = styled.div`
   width: 100%;
@@ -23,7 +11,6 @@ const Wrapper = styled.div`
   position: absolute;
   top: 0;
   z-index: 1;
-  //background-color: rgba(0, 0, 0, 0.5);
   background: none;
 `;
 
@@ -44,17 +31,10 @@ const Spinner = styled.div`
 `;
 
 export default function Loader() {
-  // const classes = useStyles();
 
   return (
     <Wrapper>
-      {/*<div className={classes.root}>*/}
-        {/* <CircularProgress /> */}
-        {/* <CircularProgress color="secondary" /> */}
-        {/* loading */}
-        {/* <div className="loader">Loading...</div> */}
         <Spinner />
-      {/*</div>*/}
     </Wrapper>
   );
 }
